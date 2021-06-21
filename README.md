@@ -30,13 +30,13 @@ Run the below command from the root directory
 Run the below command from the root directory
 1. `mvn spring-boot:run`
 
-Service Registry-> URL: http://<host-name>:8761/
-Could Gateway->  URL: http://<host-name>:8085/
-ApiCloudGatewayURL-> : http://<host-name>:8083/
-Hystrixdashboard-> URL: http://<host-name>:8084/
-NewsletterSubscriptionService-> URL: http://<host-name>:8080/
-SubscriptionDetailsService-> URL: http://<host-name>:8082/
-UserSubscriptionService-> URL: http://<host-name>:8081/
+- **Service Registry->** URL: http://<host-name>:8761/ 
+- **Could Gateway->**  URL: http://<host-name>:8085/
+- **ApiCloudGateway->** URL : http://<host-name>:8083/
+- **Hystrixdashboard->** URL: http://<host-name>:8084/
+- **NewsletterSubscriptionService->** URL: http://<host-name>:8080/
+- **SubscriptionDetailsService->** URL: http://<host-name>:8082/
+- **UserSubscriptionService->** URL: http://<host-name>:8081/
   
 ## Swagger Documentation
 Swagger documentation for  can be accessed at the following URL -
