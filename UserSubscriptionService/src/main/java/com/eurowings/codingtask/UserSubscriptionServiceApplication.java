@@ -9,10 +9,10 @@ import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 @EnableEurekaClient
-public class UpdateSubscriptionServiceApplication {
+public class UserSubscriptionServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(UpdateSubscriptionServiceApplication.class, args);
+		SpringApplication.run(UserSubscriptionServiceApplication.class, args);
 	}
 	
 	@Bean
