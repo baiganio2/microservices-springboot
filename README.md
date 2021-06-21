@@ -25,7 +25,7 @@ The repository microservices application for the task.
 ## Application Set up and Build Steps
 **Backend** 
 Run the below command from the root directory
-1. `mvn clean install`
+1. `mvn clean install -Dmaven.test.skip=true`
 
 ## Running the server locally
 **Backend** 
@@ -49,7 +49,6 @@ password: eurowings
 3.  http://<host-name>:eurowings-details/swagger-ui.html
   
 ## Unit test cases
-**Backend** 
 Run the below command from the root directory
 1. `mvn clean test`
 
@@ -60,6 +59,10 @@ Run the below command from the root directory
 docker images
 # Push image to container and run
 docker run -p <container-port>:<host-port> <jar-name>
+  
+## Run Zipkin server
+1. downloaded the open zipkin from https://zipkin.io/pages/quickstart
+2. java -jar <zipkin-jar>
   
 ## Time Spent
 6 hr
