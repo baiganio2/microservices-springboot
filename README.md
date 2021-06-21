@@ -1,4 +1,4 @@
-## NewsletterSubscriptiondAssignment
+## NewsletterSubscriptionAssignment
 Maven based spring boot application for eurowings assignment task
 
 ## Description
