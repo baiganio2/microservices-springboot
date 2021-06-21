@@ -12,6 +12,7 @@
 	<groupId>nkhatun.practice.java</groupId>
 	<artifactId>NewsletterSubscriptionService</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>NewsletterSubscriptionService</name>
 	<description>Spring Cloud Cofig Server</description>
 	<properties>
@@ -155,6 +156,7 @@
 				</executions>
 			</plugin>
 		</plugins>
+		<finalName>subscription-update</finalName>
 	</build>
 
 </project>

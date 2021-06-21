@@ -20,8 +20,14 @@ import lombok.NoArgsConstructor;
 public class Subscriptions {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(columnDefinition = "INTEGER")
 	private Long id;
     @Column(name="user_id", nullable=false)
 	private Long userId;
-	private int status;
+	private Integer status;
+	public Subscriptions(Long userId, Integer status) {
+		super();
+		this.userId = userId;
+		this.status = status;
+	}
 }

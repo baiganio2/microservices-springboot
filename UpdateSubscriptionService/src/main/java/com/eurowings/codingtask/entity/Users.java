@@ -17,9 +17,14 @@ import lombok.NoArgsConstructor;
 public class Users {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(columnDefinition = "INTEGER")
 	private Long id;
 	@Column(name = "USER_NAME")
 	private String userName;
 	@Column(name = "USER_EMAIL")
 	private String userEmail;
+	public Users(String userName, String userEmail) {
+		this.userName = userName;
+		this.userEmail = userEmail;
+	}
 }

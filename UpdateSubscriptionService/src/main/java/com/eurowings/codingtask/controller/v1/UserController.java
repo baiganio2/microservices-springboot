@@ -14,6 +14,7 @@ import com.eurowings.codingtask.dto.SubscriptionDto;
 import com.eurowings.codingtask.dto.UserDto;
 import com.eurowings.codingtask.service.UserService;
 
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequestMapping("/api/v1/users")
@@ -23,12 +24,14 @@ public class UserController {
 	private UserService userService;
 	
 	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Save details of user", response = ResponseDto.class)
 	public ResponseDto saveUserDetails(@RequestBody UserDto userDto) {
 		log.info("API call to create new user");
 		return userService.saveUserDetails(userDto);
 	}
 	
 	@PostMapping(value="/subscriptionStatus",consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Update subscription status", response = ResponseDto.class)
 	public ResponseDto updateSubscriptionStatus(@RequestBody SubscriptionDto subscriptionDto) {
 		log.info("API call to update transaction status for a user");
 		return userService.updateSubscriptionStatus(subscriptionDto);
@@ -36,6 +39,7 @@ public class UserController {
 	
 
 	@GetMapping(value="/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Fetch subscription details", response = ResponseDto.class)
 	public ResponseDto getSubscriptionDetails(@PathVariable("id") Long userId) {
 		log.info("API call to get user details by user id");
 		return userService.getSubscriptionDetails(userId);

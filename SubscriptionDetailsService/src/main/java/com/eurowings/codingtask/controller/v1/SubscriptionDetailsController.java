@@ -1,4 +1,4 @@
-package com.eurowings.codingtask.controller;
+package com.eurowings.codingtask.controller.v1;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.eurowings.codingtask.dto.ResponseDto;
 import com.eurowings.codingtask.service.SubscriptionDetailsService;
 
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
@@ -20,6 +21,7 @@ public class SubscriptionDetailsController {
 	private SubscriptionDetailsService detailsService;
 	
 	@GetMapping(value="/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Fetch the newsletter subscription details of a user", response = ResponseDto.class)
 	public ResponseDto getSubscriptionDetails(@PathVariable("id") Long userId) {
 		log.info("API call to check if a requested user should receive the newsletter, or not");
 		return detailsService.getSubscriptionDetails(userId);

@@ -13,6 +13,8 @@ import com.eurowings.codingtask.dto.ResponseDto;
 import com.eurowings.codingtask.dto.SubscriptionDto;
 import com.eurowings.codingtask.service.SubscriptionService;
 
+import io.swagger.annotations.ApiModelProperty;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 
 import org.slf4j.Logger;
@@ -26,12 +28,14 @@ public class SubscriptionController {
 	private SubscriptionService subscriptionService;
 	
 	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Update the newsletter subscription status for a user", response = ResponseDto.class)
 	public ResponseDto updateSubsriptionStatus(@RequestBody SubscriptionDto subscriptionDto) {
 		log.info("API call to update the newsletter subscription status");
 		return subscriptionService.updateSubscriptionStatus(subscriptionDto);
 	}
 	
 	@GetMapping(value="/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Fetch the newsletter subscription status for a user", response = ResponseDto.class)
 	public ResponseDto getSubscriptionPermission(@PathVariable("id") Long userId) {
 		log.info("API call to check if a requested user should receive the newsletter, or not");
 		return subscriptionService.getSubscriptionPermission(userId);
