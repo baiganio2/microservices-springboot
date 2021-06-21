@@ -23,12 +23,10 @@ The repository microservices application for the task.
 - **Zipkin**    - trace management
 
 ## Application Set up and Build Steps
-**Backend** 
 Run the below command from the root directory
 1. `mvn clean install -Dmaven.test.skip=true`
 
 ## Running the server locally
-**Backend** 
 Run the below command from the root directory
 1. `mvn spring-boot:run`
 
@@ -55,9 +53,9 @@ Run the below command from the root directory
 ## Build docker file
 Run the below command from the root directory
 1. `docker build -f Dockerfile -t <jar-name> .`
-# View all images
+**View all images**
 docker images
-# Push image to container and run
+**Push image to container and run**
 docker run -p <container-port>:<host-port> <jar-name>
   
 ## Run Zipkin server
